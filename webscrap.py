@@ -112,9 +112,9 @@ with open('result.csv','w',newline='',encoding="utf-8") as resultFile:
 
         domainReq = requests.get(domainLink)
         domainSoup = BeautifulSoup(domainReq.content,'html.parser')
-        last_page = domainSoup.find('li',class_="page-item last").a['data-page']
+        last_page = int(domainSoup.find('li',class_="page-item last").a['data-page'])
 
-        for page in range(2):
+        for page in range(last_page+1):
             pageLink = domainLink + '?page=' + str(page)
             pageReq = requests.get(pageLink)
             pageSoup = BeautifulSoup(pageReq.content,'html.parser')
