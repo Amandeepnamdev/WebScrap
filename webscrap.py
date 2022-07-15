@@ -100,6 +100,7 @@ def findCompanyDetails(companyProfile):
 
 
 
+
 with open('result.csv','w',newline='',encoding="utf-8") as resultFile:
     fieldnames = ['Company','Business Entity Name' ,'Domain','Website','Location','Contact','Rating',
     'Review Count','Hourly Rate','Min Project Size','Employee Size',
